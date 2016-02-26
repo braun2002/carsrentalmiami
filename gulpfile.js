@@ -112,6 +112,7 @@ gulp.task('build', [
 gulp.task('app:watch', function () {
 
     gulp.watch('src/*.html', ['html:build']);
+    gulp.watch('src/**/*.html', ['html:build']);
     gulp.watch('src/js/**/*.js', ['js:build']);
     gulp.watch('src/style/**/*.scss', ['style:build']);
     gulp.watch('src/img/**/*.*', ['image:build']);

@@ -1,4 +1,6 @@
-/*$blue: #3bbfce;  цвет
+$blue: #3bbfce;
+$red: #ce2c34;
+/*
 $margin: 16px;
 $fontSize: 14px;
 
@@ -16,7 +18,90 @@ h1{
   width: 100%;
   height: auto;
 }*/
-
+a{
+  text-decoration: none;
+}
+.clear{
+  clear: both;
+}
 #header{
 
 }
+.header-inner{
+  max-width: 980px;
+  margin: auto;
+  width: 100%;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  display: table;
+}
+
+#logo-container{
+  width:22.5%;
+  float: left;
+}
+
+.primary-navigation{
+  width:75%;
+  float: left;
+  position: relative;
+
+  li{
+    border: 0;
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+    margin-top: -3px;
+    &:first-child{
+     padding-left: 0;
+    }
+    &:last-child{
+      padding-right: 0;
+    }
+  }
+  ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+    display: inline-block;
+    border-top:3px solid #f8f8f8;
+  }
+  a{
+    display: inline-block;
+    padding: 23px 2px;
+    white-space: nowrap;
+    color: #222222;
+    font-size: 17px;
+    border-top: 3px solid #f8f8f8;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    &:hover{
+      color: $red;
+    }
+  }
+}
+#lang-switcher{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  ul{
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style-type: none !important;
+  }
+  li{
+    width: 76px;
+    float: none;
+    transition: all linear 0.5s;
+    -webkit-transition: all linear 0.5s;
+    -moz-transition: all linear 0.5s;
+    -ms-transition: all linear 0.5s;
+    &:before{
+      content: '' !important;
+    }
+  }
+}
+
