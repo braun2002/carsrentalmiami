@@ -1,5 +1,7 @@
 $blue: #3bbfce;
 $red: #ce2c34;
+$break-small: 560px;
+$break-large: 980px;
 /*
 $margin: 16px;
 $fontSize: 14px;
@@ -24,6 +26,10 @@ a{
 .clear{
   clear: both;
 }
+
+/**
+* Header styles
+*/
 #header{
 
 }
@@ -40,6 +46,12 @@ a{
 #logo-container{
   width:22.5%;
   float: left;
+  @media screen and (max-width: $break-large) {
+    width:100%;
+    text-align: center;
+    margin-top:20px;
+
+  }
 }
 
 .primary-navigation{
@@ -81,10 +93,24 @@ a{
       color: $red;
     }
   }
+  @media screen and (max-width: $break-large) {
+    width:100%;
+    margin:0 auto;
+    text-align: center;
+    ul{
+      width:90%;
+      margin:0 auto;
+      border-top: none;
+      border-bottom: 3px solid #f8f8f8;
+    }
+    a{
+      border-top: none;
+    }
+  }
 }
 #lang-switcher{
   position: absolute;
-  top: 0;
+  top: 5px;
   right: 0;
   z-index: 999;
   ul{
@@ -93,7 +119,8 @@ a{
     list-style-type: none !important;
   }
   li{
-    width: 76px;
+    position: relative;
+    width: 90px;
     float: none;
     transition: all linear 0.5s;
     -webkit-transition: all linear 0.5s;
@@ -102,6 +129,78 @@ a{
     &:before{
       content: '' !important;
     }
+  }
+  .other{
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    width: 90px;
+    float: none;
+    transition: all linear 0.5s;
+    -webkit-transition: all linear 0.5s;
+    -moz-transition: all linear 0.5s;
+    -ms-transition: all linear 0.5s;
+    li{
+      background: #ffffff;
+      color: #444444;
+      height: auto;
+      line-height: 1em;
+      padding: 5px 0px;
+      border-width: 0 1px 1px 1px;
+    }
+    a{
+      padding-right: 29px;
+    }
+    &:hover .sel{
+      opacity:1;
+      visibility: visible;
+    }
+
+  }
+  a{
+    background: #f8f8f8;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 19px;
+  }
+  .sel{
+    &:after{
+      margin-right: 10px;
+      content: '';
+      width: 9px;
+      height: 5px;
+      display: inline-block;
+      margin-left: 6px;
+      margin-bottom: 4px;
+      background: url(http://www.spark-estate.com/wp-content/themes/spark/images/lang-arrow.png);
+      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transition: all linear 0.2s;
+      -webkit-transition: all linear 0.2s;
+      -moz-transition: all linear 0.2s;
+      -ms-transition: all linear 0.2s;
+    }
+    &:hover{
+      &:after{
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transition: all linear 0.2s;
+        -webkit-transition: all linear 0.2s;
+        -moz-transition: all linear 0.2s;
+        -ms-transition: all linear 0.2s;
+      }
+
+    }
+
+
+  }
+  @media screen and (max-width: $break-small) {
+    right:50%;
+    margin-right: -50px;
   }
 }
 
